@@ -98,16 +98,21 @@ print(metricSentenceToImperial(verificationSentence))
 
 
 
-# # Test for sentence with only words
-# noNumbersTest = "The quick brown fox jumps over the lazy dog."
-# print(metricSentenceToImperial(noNumbersTest))
+# # Test for sentence with multiple units
+# multipleUnitsTest = "The dog weighed 15kg and was 1m long"
+# print(metricSentenceToImperial(multipleUnitsTest))
+
+# # Test for sentence with multiple prefixes
+# multiplePrefixesTest = "The dog weighed 1500hg and was 1000mm long"
+# print(metricSentenceToImperial(multiplePrefixesTest))
 
 # # Test for numbers without metric units
 # nonMetricUnitsTest = "I am 22 years old, and I have lived in 3 different houses."
 # print(metricSentenceToImperial(nonMetricUnitsTest))
 
 # # Test for decimal numbers
-# decimalNumbersTest = "The largest recorded blue whale was 29.9m long. I am only 190cm."
+# decimalNumbersTest = "The largest recorded blue whale was 29.9m long. I am only 1.90m."
 # print(metricSentenceToImperial(decimalNumbersTest))
+
 
 
