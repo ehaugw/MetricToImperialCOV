@@ -3,7 +3,8 @@
 def metricValueToImperial(metricString):
     imperialString = ""
     roundingDecimals = 2
-
+    punctuations = ".,!?)"
+    
     # Conversion rates from metric units to their corresponding imperial units
     unitConversionRates = {
         "g": [0.00220462, "lbs"],
@@ -25,6 +26,12 @@ def metricValueToImperial(metricString):
     # Input without unit is returned unchanged
     if metricString[-1].isnumeric():
         return metricString    
+    
+    # Extracts any punctuation at the end of input
+    punctuation = ""
+    if metricString[-1] in punctuations:
+        punctuation = metricString[-1]
+        metricString = metricString[:-1]
     
     # Extracts metric unit from input
     metricUnit = metricString[-1]
@@ -53,7 +60,7 @@ def metricValueToImperial(metricString):
     else:
         imperialString = str(round(imperialValue, roundingDecimals)) + unitConversionRates[metricUnit][1]
     
-    return imperialString
+    return imperialString+punctuation
 
 
 
