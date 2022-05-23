@@ -4,7 +4,7 @@ def metricValueToImperial(metricString):
     imperialString = ""
     roundingDecimals = 2
     punctuations = ".,!?)"
-    
+
     # Conversion rates from metric units to their corresponding imperial units
     unitConversionRates = {
         "g": [0.00220462, "lbs"],
@@ -32,7 +32,7 @@ def metricValueToImperial(metricString):
     if metricString[-1] in punctuations:
         punctuation = metricString[-1]
         metricString = metricString[:-1]
-    
+
     # Extracts metric unit from input
     metricUnit = metricString[-1]
     if not metricUnit in unitConversionRates:
@@ -107,6 +107,7 @@ print(metricSentenceToImperial(verificationSentence))
 # print(metricSentenceToImperial(nonMetricUnitsTest))
 
 # # Test for decimal numbers
-# decimalNumbersTest = "The largest recorded blue whale was 29.9m long."
+# decimalNumbersTest = "The largest recorded blue whale was 29.9m long. I am only 190cm."
 # print(metricSentenceToImperial(decimalNumbersTest))
+
 
